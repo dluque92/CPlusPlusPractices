@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+#{alumnosBean.init()}
+	<div>
+		<ui:include src="Cabecera.xhtml" />
+	</div>
+	<style type="text/css">
+		@import url("../css/style.css");
+	</style>
+</h:head>
+
+
+<h:body>
+	<h:form
+		style="margin: 20px; margin-left: auto; margin-right: auto; max-width: 900px;">
+		<p:panel id="panel" header="DONDE ESTAMOS..."
+			style="margin-bottom:10px;">
+
+			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="10">
+				<p:column>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1599.1242009635484!2d-4.424876635581927!3d36.71659505178892!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2s!4v1407781842447" width="600" height="450" frameborder="0" style="border:0"></iframe>
+				</p:column>
+				<p:column style="text-align:right;width:200px;">
+					<h:outputText value= "C/ San Lorenzo, 2" /><br/>
+					<h:outputText value= "4ª Planta" /><br/>
+					<h:outputText value= "29001 Málaga • España" /><br/>
+					<h:outputText value= "Tfno +34 952 313 759" />
+				</p:column>		
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+	
+	<div id="footer" style="margin-top:auto;">
+    	<h4>Copyright © 2014 - Academia3</h4>
+    </div>
+	
+	
+	<!-- ClickDesk Live Chat Service for websites -->
+		<script type='text/javascript'>
+			var _glc =_glc || []; _glc.push('all_ag9zfmNsaWNrZGVza2NoYXRyDwsSBXVzZXJzGKvqmqwEDA');
+			var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' : 
+			'http://my.clickdesk.com/clickdesk-ui/browser/');
+			var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+			var glcspt = document.createElement('script'); glcspt.type = 'text/javascript'; 
+			glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
+			var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
+		</script>
+	<!-- End of ClickDesk -->
+	
+</h:body>
+
+</html>

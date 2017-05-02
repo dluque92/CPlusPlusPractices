@@ -1,0 +1,9 @@
+13:20:17 **** Incremental Build of configuration Debug for project Practica03Ejercicio01while ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Practica03Ejercicio01while.o" "..\\src\\Practica03Ejercicio01while.cpp" 
+..\src\Practica03Ejercicio01while.cpp: In function `int main()':
+..\src\Practica03Ejercicio01while.cpp:20: warning: comparison between signed and unsigned integer expressions
+g++ -o Practica03Ejercicio01while.exe "src\\Practica03Ejercicio01while.o" 
+
+13:20:18 Build Finished (took 1s.344ms)
+

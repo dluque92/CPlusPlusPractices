@@ -1,0 +1,55 @@
+<!-- Incluir cabecera en cada .xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<ui:include src="cabecera.xhtml"></ui:include>
+	<div class="cuerpo">
+		<ui:include src="menu.xhtml"></ui:include>
+		<div class="divespacio"></div>
+		<div class="contenido">
+			<!-- Incluir cabecera hasta aqui -->
+			
+<h:form> 
+			<p:dataTable var="alumno" value="#{BuscadorBean.listaAlu}" tableStyle="width:auto">
+				<p:column headerText="Nombre">
+					<h:outputText value="#{alumno.nombre}" />
+				</p:column>
+
+				<p:column headerText="Apellidos">
+					<h:outputText value="#{alumno.apellidos}" />
+				</p:column>
+
+				<p:column headerText="Telefono">
+					<h:outputText value="#{alumno.telefono}" />
+				</p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{alumno.email}" />
+				</p:column>
+
+				<p:column headerText="Acciones">
+					<p:button value="Editar" icon="ui-icon-pencil" >
+						<f:param name="alumno" value="#{alumno}" />
+					</p:button>
+					<p:button value="Borrar" icon="ui-icon-closethick" >
+						<f:param name="alumno" value="#{alumno}" />
+					</p:button>
+
+				</p:column>
+
+			</p:dataTable>
+</h:form>
+			<!-- Incluir pie en cada .xhtml -->
+		</div>
+	</div>
+	<ui:include src="pie.xhtml"></ui:include>
+</h:body>
+</html>
+<!-- Incluir pie hasta aqui -->

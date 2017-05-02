@@ -1,0 +1,7 @@
+21:34:06 **** Incremental Build of configuration Debug for project Practica02Ejercicio06 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Practica02Ejercicio06.o" "..\\src\\Practica02Ejercicio06.cpp" 
+g++ -o Practica02Ejercicio06.exe "src\\Practica02Ejercicio06.o" 
+
+21:34:07 Build Finished (took 407ms)
+

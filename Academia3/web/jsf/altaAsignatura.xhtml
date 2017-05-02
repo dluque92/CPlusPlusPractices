@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+#{asignaturasBean.init()}
+	<div>
+		<ui:include src="Cabecera.xhtml" />
+	</div>
+	<style type="text/css">
+@import url("../css/style.css");
+</style>
+
+</h:head>
+<h:body>
+
+
+	<h:form id="formAltaAsignatura"
+		style="margin: 100px; margin-left: auto; margin-right: auto; max-width: 400px;">
+
+		<p:panel id="panel" header="Alta Asignatura"
+			style="margin-bottom:10px;">
+			<p:tooltip />
+			<p:messages id="messages" showDetail="true" autoUpdate="false"
+				closable="false" rendered="true" redisplay="true" showSummary="true" />
+			<h:panelGrid columns="2" cellpadding="5">
+
+				<h:outputLabel value="Nombre" />
+				<p:inputText id="nombre" required="true"
+					value="#{asignaturasBean.asignaturaAdapter.nombre}" />
+
+				<h:outputLabel value="Horario" />
+				<p:inputText id="horario" required="true"
+					value="#{asignaturasBean.asignaturaAdapter.horario}" />
+
+				<h:outputLabel value="Aula" />
+				<p:inputText id="aula" required="true"
+					value="#{asignaturasBean.asignaturaAdapter.aula}" />
+
+			</h:panelGrid>
+
+		</p:panel>
+
+		<p:commandButton value="Alta"
+			action="#{asignaturasBean.insertarAsignatura}" ajax="true" update=":formAltaAsignatura:messages" style="width:198px;" />
+		<p:commandButton value="Limpiar Datos" update="panel" style="width:198px;" />
+
+
+	</h:form>
+	
+	<div id="footer">
+    	<h4>Copyright © 2014 - Academia3</h4>
+    </div>
+</h:body>
+</html>

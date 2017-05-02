@@ -1,0 +1,22 @@
+//============================================================================
+// Name        : FP_relac1_17.cpp
+// Author      : David Luque Fernández
+// Version     :
+// Copyright   : 1º Informática A
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	cont=0;
+	while (cont < 10) {
+	cont = cont + 1;
+	if (cont == 10) {
+	Acción I
+	}
+	}
+	cout << "" << endl; // prints 
+	return 0;
+}

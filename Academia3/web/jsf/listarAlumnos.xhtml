@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+#{alumnosBean.init()}
+	<div>
+		<ui:include src="Cabecera.xhtml" />
+	</div>
+	<style type="text/css">
+@import url("../css/style.css");
+</style>
+</h:head>
+
+<body>
+
+	<h:form id="formListar2"
+		style="margin: 100px; margin-left: auto; margin-right: auto;">
+
+		<p:growl id="msgs" showDetail="true" />
+		<p:dataTable id="listar" var="alumno"
+			value="#{alumnosBean.obtenerAlumno()}"
+			emptyMessage="No hay alumnos disponibles" paginator="true" rows="10"
+			paginatorPosition="bottom"
+			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} 
+			 {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="10,50,100" rowsPerPageAllEntry="true"
+			editable="true">
+
+			<p:column headerText="Id" style="text-align:center;width:32px;">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{alumno.idAlumno}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="id_alumno" value="#{alumno.idAlumno}"
+							style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+			<p:column headerText="Nombre" style="text-align:center;width:200px;">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{alumno.nombre}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="nombre_alumno" value="#{alumno.nombre}"
+							style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+			<p:column headerText="Apellidos"
+				style="text-align:center;width:200px;">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{alumno.apellidos}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="apellidos_alumno" value="#{alumno.apellidos}"
+							style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+			<p:column headerText="Telefono"
+				style="text-align:center;width:200px;">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{alumno.telefono}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="telefono_alumno" value="#{alumno.telefono}"
+							style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+
+			<p:column headerText="Email" style="text-align:center;width:200px;">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{alumno.email}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText id="email_alumno" value="#{alumno.email}"
+							style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+		</p:dataTable>
+
+	</h:form>
+
+	<div id="footer">
+    	<h4>Copyright © 2014 - Academia3</h4>
+    </div>
+
+</body>
+</html>

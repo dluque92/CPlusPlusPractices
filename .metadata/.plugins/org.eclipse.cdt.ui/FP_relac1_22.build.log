@@ -1,0 +1,7 @@
+19:49:20 **** Incremental Build of configuration Debug for project FP_relac1_22 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\FP_relac1_22.o" "..\\src\\FP_relac1_22.cpp" 
+g++ -o FP_relac1_22.exe "src\\FP_relac1_22.o" 
+
+19:49:21 Build Finished (took 421ms)
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<h:head>
+		<div>
+			<ui:include src="Cabecera.xhtml" />
+		</div>
+		<style type="text/css">
+			@import url("../css/style.css");
+		</style>
+	</h:head>
+	
+	<h:body>
+	
+		<h:form id="contacto" 
+				style="margin: 100px; margin-left: auto; margin-right: auto; max-width: 850px;">
+	
+			<h2>Formulario de Contacto</h2>
+	
+			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5" id="panel">
+				<p:outputLabel for="nombre" value="Nombre: " />
+            	<p:inputText id="nombre" required="true" />
+            	
+				<p:outputLabel for="email" value="Email: " />
+            	<p:inputText id="email" required="true" />
+            	
+            	<p:outputLabel for="mensaje" value="Mensaje: " />
+            	<p:inputTextarea id="mensaje" rows="10" cols="50" />
+    
+			</h:panelGrid>
+			
+			<p:commandButton value="Enviar" update="panel"  />
+		</h:form>
+		
+		<div id="footer">
+    	<h4>Copyright © 2014 - Academia3</h4>
+    </div>
+		
+	</h:body>
+	
+
+</html>

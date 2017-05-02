@@ -1,0 +1,8 @@
+09:35:16 **** Rebuild of configuration Debug for project FP_relac3_19 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\FP_relac3_19.o" "..\\src\\FP_relac3_19.cpp" 
+..\src\FP_relac3_19.cpp: In function `int main()':
+..\src\FP_relac3_19.cpp:97: error: no match for 'operator!=' in 'resul.TElecciones::partidos[i] != 0'
+
+09:35:16 Build Finished (took 485ms)
+

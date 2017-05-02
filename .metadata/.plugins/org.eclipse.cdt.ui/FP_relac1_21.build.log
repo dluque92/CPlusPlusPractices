@@ -1,0 +1,7 @@
+12:55:57 **** Rebuild of configuration Debug for project FP_relac1_21 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\FP_relac1_21.o" "..\\src\\FP_relac1_21.cpp" 
+g++ -o FP_relac1_21.exe "src\\FP_relac1_21.o" 
+
+12:55:59 Build Finished (took 1s.422ms)
+

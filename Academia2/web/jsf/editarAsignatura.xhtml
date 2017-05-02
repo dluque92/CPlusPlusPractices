@@ -1,0 +1,64 @@
+<!-- Incluir cabecera en cada .xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+<ui:include src="cabecera.xhtml"></ui:include>
+<div class="cuerpo">
+<ui:include src="menu.xhtml"></ui:include>
+<div class="divespacio"></div>
+<div class="contenido">
+<!-- Incluir cabecera hasta aqui -->
+
+<!-- PARA USAR FLASH SCOPE, EN EL VALUE SE PONE ANTES flash, ejem:
+	#{flash.AsignaturaBean.asignatura.nombre}	 -->
+<h:form>
+	 <!-- panel exterior que rodea el form -->
+     <p:panel id="panel" header="Editar Asignatura" style="margin-bottom:10px;" styleClass="formCentradoEditAsig">
+     	<!-- Mensajes de error -->
+     	<p:messages id="msgs" />
+     	<!-- Tabla para el formulario -->
+     	<p:panelGrid columns="3"  styleClass="noBorders">
+           <h:outputLabel for="inputnombre" value="Nombre: "/>
+           <p:inputText id="inputnombre" value="#{AsignaturaBean.asignatura.nombre}" required="true" label="Nombre">
+               <f:validateLength minimum="3" maximum="50" />
+               <p:ajax update="msgnombre"  event="keyup" />
+           </p:inputText>
+           <p:message for="inputnombre" id="msgnombre" display="icon" />
+           
+           <h:outputLabel for="inputhorario" value="Horario: "/>
+           <p:inputText id="inputhorario" value="#{AsignaturaBean.asignatura.horario}" required="true" label="Horario">
+               <f:validateLength minimum="3" maximum="45"/>
+               <p:ajax update="msghorario"  event="keyup" />
+           </p:inputText>
+           <p:message for="inputhorario" id="msghorario" display="icon" />
+           
+           <h:outputLabel for="inputaula" value="Aula: "/>
+           <p:inputText id="inputaula" value="#{AsignaturaBean.asignatura.aula}" required="true" label="Aula">
+               <f:validateLength minimum="1" maximum="20"/>
+               <p:ajax update="msgaula"  event="keyup" />
+           </p:inputText>
+            <p:message for="inputaula" id="msgaula" display="icon" />
+     	 </p:panelGrid> 
+     </p:panel>
+     <!-- Boron de editar, importante update para que recargue el panel
+     en caso de que haya errores de validacion. Sino no se muestran. -->
+     <p:commandButton update="panel" value="Editar" actionListener="#{AsignaturaBean.EditarBD()}"/>
+           
+ </h:form>
+
+
+
+<!-- Incluir pie en cada .xhtml -->
+</div>
+</div>
+<ui:include src="pie.xhtml"></ui:include>
+</h:body>
+</html>
+<!-- Incluir pie hasta aqui -->

@@ -1,0 +1,7 @@
+16:07:30 **** Rebuild of configuration Debug for project Practica06Ejercicio01 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Practica06Ejercicio01.o" "..\\src\\Practica06Ejercicio01.cpp" 
+g++ -o Practica06Ejercicio01.exe "src\\Practica06Ejercicio01.o" 
+
+16:07:31 Build Finished (took 1s.0ms)
+

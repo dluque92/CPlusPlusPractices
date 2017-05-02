@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+<p:megaMenu id="megaMenu" orientation="#{megaMenuView.orientation}"
+	style="margin-top:30px;	max-width:auto;">
+	<p:menuitem value="Inicio" url="index.jsf" style="margin-top:7px;" />
+
+
+	<p:submenu label="Alumno" style="margin-top:7px;">
+		<p:column>
+			<p:submenu label="">
+				<p:menuitem value="Añadir alumno" url="altaAlumno.jsf" />
+				<p:menuitem value="Listar alumno" url="listarAlumnos.jsf" />
+				<p:menuitem value="Buscar alumnos" url="buscarAlumnos.jsf" />
+			</p:submenu>
+		</p:column>
+	</p:submenu>
+	<p:submenu label="Asignatura" style="margin-top:7px;">
+		<p:column>
+			<p:submenu label="">
+				<p:menuitem value="Añadir asignatura" url="altaAsignatura.jsf" />
+				<p:menuitem value="Listar asignatura" url="listarAsignaturas.jsf" />
+				<p:menuitem value="Buscar asignaturas" url="buscarAsignaturas.jsf" />
+			</p:submenu>
+		</p:column>
+	</p:submenu>
+	<p:submenu label="Profesor" style="margin-top:7px;">
+		<p:column>
+			<p:submenu label="">
+				<p:menuitem value="Añadir profesor" url="altaProfesor.jsf" />
+				<p:menuitem value="Listar profesor" url="listarProfesores.jsf" />
+				<p:menuitem value="Buscar profesores" url="buscarProfesores.jsf" />
+			</p:submenu>
+		</p:column>
+	</p:submenu>
+	<p:menuitem value="Calendario" url="calendario.jsf" style="margin-top:7px;" />
+	<p:menuitem value="Ubicación" url="dondeEstamos.jsf" style="margin-top:7px;" />
+	
+	<f:facet name="options" >
+		<p:commandButton
+			onclick="document.getElementById('formLogout:commandLinkLogout').click();"
+			type="button" value="Salir" icon="ui-icon-extlink"
+			style="float:right; margin-right:5px; margin-top:7px; border:0px; " />
+			
+			
+			<a href="index.jsf"><h:graphicImage  url="/img/besoftware.png"  style=" float:right; margin-left:10px; margin-right:10px;   width: 20%; height: 20%;" /></a>
+			<a href="https://twitter.com/BeSoftwareBSW" target="_blank"><h:graphicImage url="/img/twitter-icon.png" title="siguenos en Twitter" style=" float:right;  margin-left:10px; margin-top:10px;  width: 4%; height: 4%;" /></a>
+			<a href="https://es-es.facebook.com/beSoftwareBSW" target="_blank"><h:graphicImage url="/img/facebook-icon.png"  title="siguenos en facebook" style=" float:right; margin-top:10px;    width: 4%; height: 4%;" /></a>
+			
+			
+	</f:facet>
+</p:megaMenu>
+
+<h:form id="formLogout">
+	<p:commandLink id="commandLinkLogout"
+		actionListener="#{usuariosBean.logout()}" style="display:none" />
+</h:form>
+
+<h:body>
+	<f:facet name="last">
+		<h:outputStylesheet library="default" name="css/style.css" />
+	</f:facet>
+</h:body>
+</html>

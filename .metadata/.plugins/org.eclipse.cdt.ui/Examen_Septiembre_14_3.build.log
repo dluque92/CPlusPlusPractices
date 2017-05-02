@@ -1,0 +1,7 @@
+12:53:24 **** Rebuild of configuration Debug for project Examen_Septiembre_14_3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Examen_Septiembre_14_3.o" "..\\src\\Examen_Septiembre_14_3.cpp" 
+g++ -o Examen_Septiembre_14_3.exe "src\\Examen_Septiembre_14_3.o" 
+
+12:53:24 Build Finished (took 484ms)
+

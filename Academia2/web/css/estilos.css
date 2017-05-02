@@ -1,0 +1,329 @@
+@CHARSET "ISO-8859-1";
+
+/*Fondo de la web*/
+html {
+    background: url(../img/fondo.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/*	Estilo de la cabecera de la pagina */
+.cabecera {
+	position: absolute;
+	top:40px;
+	width:1000px;
+	height:150px;
+	background-color: #dcf4ef;
+	
+	
+	/*Centrado en pantalla*/
+	margin-left:-500px;
+	left:50%;
+	
+	/*Redondeado de bordes*/
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+
+	
+	/*Sombra*/
+	webkit-box-shadow: 7px 7px 10px 0px #cccccc;	
+  	-moz-box-shadow: 7px 7px 10px 0px #cccccc;	
+	box-shadow: 7px 7px 10px 0px #cccccc;	
+	
+	
+}
+.cabecera img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -300px;;
+	
+}
+/*Div que contiene todo el cuerpo de la pagina*/
+.cuerpo {
+	position: absolute;
+	top:220px;
+	width:1000px;
+	height:auto;
+	min-height:700px;
+	background-color: #dcf4ef;
+	background-image:url("../img/Logocuerpotrans.png");
+	background-repeat:no-repeat;
+	
+	
+	/*Centrado en pantalla*/
+	margin-left:-500px;
+	left:50%;
+	
+	/*Redondeado de bordes*/
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+
+	/*Sombra*/
+	/*
+	webkit-box-shadow: 7px 7px 10px 0px #cccccc;	
+  	-moz-box-shadow: 7px 7px 10px 0px #cccccc;	
+	box-shadow: 7px 7px 10px 0px #cccccc;	
+	*/
+}
+/*Div espacio de 20px*/
+.divespacio {
+	width:100%;
+	height:20px;
+}
+/*Div dentro de contenido, para centrar los datos*/
+.contenido{
+	position:relative;
+	width:100%;
+	text-align:center;
+}
+/*tablas en contenido*/
+.contenido table{
+	margin: 0 auto;
+    text-align: left;
+}
+/*Listado de datos dentro de contenido*/
+.listado{
+	border: #000 2px solid;
+	border-collapse: separate;
+	border-spacing:  0px 10px;
+}
+.listado td{
+	border: #000 1px solid;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+.listado th{
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+
+.vacio td{
+	border: #000 0px solid;
+}
+/*Espacio al pie de la pagina*/
+.divespaciofondo {
+	position: absolute;
+	top:920px;
+	width:900px;
+	height:40px;
+}
+
+/*Menu*/
+.lineamenu {
+	width:100%;	
+	height:44px;
+	margin-top:0px;
+	margin-right:0px;
+	margin-left:0px;
+	background-color: #2175bc;
+	
+	/*Redondeado de bordes*/
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	
+}
+/*Buscador que está dentro del menú*/
+.buscador{
+	margin-top: 5px;
+	float: right;
+	font-family:"Times New Roman";
+	color: #fff;
+	font-size:20px; 
+}
+.buscador td{
+	float: right;
+	font-family:WalkwayBold;
+	color: #fff;
+	font-size: 21px;
+	margin-top: 3px;
+}
+
+/*
+ANTERIOR MENU DESPLEGABLE
+*/
+#button { 
+	padding: 0;
+}
+#button li { 
+	display: inline; 
+}
+#button li a {
+	font-family: WalkwayBold; 
+	font-size:20px; 
+	text-decoration: none; 
+	float:left; 
+	padding: 10px; 
+	background-color: #2175bc; 
+	color: #fff;
+	cursor: pointer;
+	/*animacion*/
+	-webkit-transition: 0.3s ease-in-out; 
+	-moz-transition: 0.3s ease-in-out; 
+	-o-transition: 0.3s ease-in-out; 
+	transition: 0.3s ease-in-out; 
+	
+	
+}
+#button li a:hover { 
+	background-color: #2586d7; 
+	/*animacion*/
+	-webkit-transform: translate(0,-0.3em); 
+	-moz-transform: translate(0,-0.3em); 
+	-o-transform: translate(0,-0.3em); 
+	-ms-transform: translate(0,-0.3em); 
+	transform: translate(0,-0.3em);
+	/*para que funcione la animacion en internet explorer*/
+	<!--[if lt IE 9]>
+		<!--[if IE 8]>	 
+   			-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=0, M22=1, SizingMethod='auto expand')";
+   		<![endif]-->
+   		filter: progid:DXImageTransform.Microsoft.Matrix(
+            M11=1,
+            M12=0,
+            M21=0,
+            M22=1,
+            SizingMethod='auto expand');
+
+   		margin-left: 0px; 
+   		margin-top: -0.3em;
+
+	<![endif]-->
+}
+
+* {
+	font-family:sans-serif;
+	list-style:none;
+	text-decoration:none;
+	margin:0;
+	padding:0;
+}
+.nav{
+	margin-left: 10px;
+}
+.nav > li {
+	z-index: 10;
+	float:left;
+	 
+}
+
+.nav li a {
+	background:#2175bc;
+	font-family: WalkwayBold;
+	color: #fff;
+	font-size:20px; 
+	display:block;
+	padding:10px 12px;
+	cursor: pointer;
+	/*animacion*/
+	-webkit-transition: 0.3s ease-in-out; 
+	-moz-transition: 0.3s ease-in-out; 
+	-o-transition: 0.3s ease-in-out; 
+	transition: 0.3s ease-in-out; 
+}
+
+.flecha{
+	font-size: 9px;
+	padding-left: 6px;
+	display: none;
+}
+
+.nav li a:not(:last-child) .flecha {
+	display: inline;
+}
+
+.nav li a:hover {
+	background:#2586d7; 
+}
+
+.nav li {
+	position:relative;
+}
+
+.nav li ul {
+	display:none;
+	position:absolute;
+	min-width:200px;
+}
+
+.nav li:hover > ul {
+	display:block;
+}
+
+.nav li ul li ul {
+	right:-140px;
+	top:0;
+}
+/*Fin menu*/
+.cablist {
+	font-family: WalkwayBold;
+	font-size:20px;
+	 
+
+}
+/*
+Login user pass
+*/
+.login{
+	position: absolute;
+	top:100px;
+	z-index: 20;
+	
+	margin-left:245px;
+	left:50%;
+}
+.login2{
+	position: absolute;
+	top:80px;
+	z-index: 20;
+	
+	margin-left:245px;
+	left:50%;
+}
+	
+/*Imagenes de fondo de la lupa del buscador*/
+#lupa{
+	content:url(../img/buscar.png) no-repeat;
+}	
+#lupa:hover{
+	content:url(../img/buscar2.png) no-repeat;
+}
+/*Imagenes de editar y borrar*/
+.editar{
+	content:url(../img/editar.png) no-repeat;
+}	
+.editar:hover{
+	content:url(../img/editar2.png) no-repeat;
+}	
+.borrar{
+	content:url(../img/borrar.png) no-repeat;
+}	
+.borrar:hover{
+	content:url(../img/borrar2.png) no-repeat;
+}
+
+/* ESTILOS PARA PRIMEFACES */
+.formCentradoEditAsig {
+	position:relative;
+	text-align: left;
+	width: 500px;
+	
+	margin-left:-250px;
+	left:50%;
+}
+.noBorders tr, .noBorders td {
+    background: none !important;
+    border: none !important;
+}
+
+.ui-paginator {
+	width:450px;
+    margin:0 auto 0 auto; 
+}

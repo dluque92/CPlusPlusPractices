@@ -1,0 +1,6 @@
+10:26:08 **** Incremental Build of configuration Debug for project Cubo_rubik ****
+Info: Internal Builder is used for build
+g++ -o Cubo_rubik.exe "src\\Cubo_rubik.o" 
+
+10:26:08 Build Finished (took 181ms)
+

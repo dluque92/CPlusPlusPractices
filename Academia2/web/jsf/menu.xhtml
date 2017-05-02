@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:form>  
+	#{BuscadorBean.initTablas()}
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+        <p:submenu label="Profesor" >
+                <p:menuitem value="Listar" url="listadoProfesor.jsf" />
+                <p:menuitem value="Añadir" url="addProfesor.jsf" />
+        </p:submenu>
+ 
+        <p:submenu label="Alumno" >
+                <p:menuitem value="Listar" url="listadoAlumno.jsf" />
+                <p:menuitem value="Añadir" url="addAlumno.jsf" />
+        </p:submenu>
+ 
+        <p:submenu label="Asignatura" >
+                <p:menuitem value="Listar" url="listadoAsignatura.jsf" />
+                <p:menuitem value="Añadir" url="addAsignatura.jsf" />
+          </p:submenu>
+ 
+         
+        <f:facet name="options">
+        <h:panelGrid columns="4" cellpadding="5">
+        	<p:selectOneMenu id="tabla" value="#{BuscadorBean.indiceTabla}">  
+                <f:selectItems value="#{BuscadorBean.listaNombreTablas}" var="Tablas" itemValue="#{Tablas.indice}" itemLabel="#{Tablas.nombre}" />
+                <p:ajax update="segundoselect" />
+            </p:selectOneMenu>
+
+            <p:selectOneMenu id="segundoselect" value="#{BuscadorBean.indiceValorEnTabla}"> 
+                <f:selectItems value="#{BuscadorBean.getListaValoresTablas(BuscadorBean.indiceTabla)}" var="ValorEnTabla" itemValue="#{ValorEnTabla.indice}" itemLabel="#{ValorEnTabla.nombre}" />
+            </p:selectOneMenu>
+         
+            <p:inputText style="margin-right:10px" placeholder="Buscar" value="#{BuscadorBean.buscarString}"/>
+            
+            <p:commandButton value="Buscar" icon="ui-icon-search"
+				actionListener="#{BuscadorBean.buscar}"/>
+		</h:panelGrid>
+        </f:facet>
+    </p:menubar>
+</h:form>
+
+</html>

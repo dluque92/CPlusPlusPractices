@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+#{alumnosBean.init()}
+	<div>
+		<ui:include src="Cabecera.xhtml"/>
+	</div>
+	
+	<!-- PROBANDO LA HOJA DE ESTILOS-->
+	<style type="text/css">
+		@import url("../css/style.css");
+	</style>
+	
+	<!-- SLIDE ESTILOS -->
+	<link rel="stylesheet" href="../css/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/styleSlide.css" type="text/css" media="screen" />
+    
+	
+</h:head>
+
+
+<h:body>
+	
+	<!-- CARROUSEL DE IMAGENES -->
+	
+	<div id="wrapper">
+       
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+              	<img src="../img/2.jpg"   />
+				<img src="../img/3.jpg"   />
+				<img src="../img/7.jpg"   />
+           
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+    	<h4>Copyright © 2014 - Academia3</h4>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.nivo.slider.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+    
+    <!-- ClickDesk Live Chat Service for websites -->
+		<script type='text/javascript'>
+			var _glc =_glc || []; _glc.push('all_ag9zfmNsaWNrZGVza2NoYXRyDwsSBXVzZXJzGKvqmqwEDA');
+			var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' : 
+			'http://my.clickdesk.com/clickdesk-ui/browser/');
+			var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+			var glcspt = document.createElement('script'); glcspt.type = 'text/javascript'; 
+			glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
+			var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
+		</script>
+	<!-- End of ClickDesk -->
+</h:body>
+</html>

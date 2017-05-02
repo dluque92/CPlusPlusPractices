@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+#{CalendarioBean.init()}
+	<div>
+		<ui:include src="Cabecera.xhtml" />
+	</div>
+	<style type="text/css">
+@import url("../css/style.css");
+</style>
+	<script type="text/javascript">
+	    PrimeFaces.locales['es'] = {
+	        closeText: 'Cerrar',
+	        prevText: 'Anterior',
+	        nextText: 'Siguiente',
+	        currentText: 'Fecha actual',
+	        monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+	            'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+	        monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+	            'Jul','Ago','Sep','Oct','Nov','Dic'],
+	        dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+	        dayNamesShort: ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'],
+	        dayNamesMin: ['D','L','M','X','J','V','S'],
+	        weekHeader: 'Semana',
+	        firstDay: 1,
+	        isRTL: false,
+	        showMonthAfterYear: false,
+	        yearSuffix: '',
+	        month: 'Mes',
+	        week: 'Semana',
+	        day: 'Dia',
+	        allDayText : 'Todo el dia'
+	    };
+
+	    function controlaIsAllDay(checked){
+	    	var inputStartDate = document.getElementById('Calendario:from');
+			var inputEndDate = document.getElementById('Calendario:to');
+	    	if(checked){
+	    		inputEndDate.disabled = true;
+	    		inputEndDate.style.backgroundColor = '#A6A6A6';
+	    		inputEndDate.value = inputStartDate.value;
+					
+		    	}else{
+		    		inputEndDate.disabled = false;
+		    		inputEndDate.style.backgroundColor = '#FFFFFF';
+		    	}
+		    
+		    }
+	</script>
+	<style type="text/css">
+.value {
+	width: 1000px;
+}
+
+#Calendario {
+	position: relative;
+	top: 50%;
+	padding-top: 30px;
+	height: 1024px;
+	width: 720px;
+	margin-top: -360px;
+	/* El margin top es la mitad del alto de nuestro contenedor, en este ejemplo 400px/2=200px */
+	margin-left: -512px
+		/* El margin left es la mitad del ancho, en este ejemplo 600px/2=300px*/
+}
+</style>
+</h:head>
+
+<h:body>
+	<h:form id="Calendario" style="margin:0 auto;">
+		<p:growl id="messages" showDetail="true" />
+
+		<h:panelGrid columnClasses="value">
+			<p:schedule id="schedule" value="#{calendarioBean.eventModel}"
+				widgetVar="myschedule">
+
+				<p:ajax event="dateSelect" listener="#{calendarioBean.onDateSelect}"
+					update="eventDetails" oncomplete="PF('eventDialog').show();" />
+				<p:ajax event="eventSelect"
+					listener="#{calendarioBean.onEventSelect}" update="eventDetails"
+					oncomplete="PF('eventDialog').show();" />
+				<p:ajax event="eventMove" listener="#{calendarioBean.onEventMove}"
+					update="messages" />
+				<p:ajax event="eventResize"
+					listener="#{calendarioBean.onEventResize}" update="messages" />
+
+			</p:schedule>
+		</h:panelGrid>
+
+		<p:dialog widgetVar="eventDialog" header="Detalle de evento"
+			showEffect="clip" hideEffect="clip">
+			<h:panelGrid id="eventDetails" columns="2">
+				<h:outputLabel for="title" value="Titulo:" />
+				<p:inputText id="title" value="#{calendarioBean.event.title}"
+					required="true" />
+
+				<h:outputLabel for="from" value="Desde:" />
+				<p:inputMask id="from" value="#{calendarioBean.event.startDate}"
+					mask="99/99/9999">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</p:inputMask>
+
+				<h:outputLabel for="to" value="Hasta:" />
+				<p:inputMask id="to" value="#{calendarioBean.event.endDate}"
+					mask="99/99/9999">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</p:inputMask>
+
+				<h:outputLabel for="allDay" value="Todo el dia:" />
+				<h:selectBooleanCheckbox id="allDay"
+					value="#{calendarioBean.event.allDay}"
+					onclick="controlaIsAllDay(this.checked)" />
+
+				<p:commandButton type="reset" value="Limpiar" />
+				<p:commandButton id="addButton" value="Guardar"
+					actionListener="#{calendarioBean.addEvent}"
+					oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+
+	<div id="footer">
+		<h4>Copyright © 2014 - Academia3</h4>
+	</div>
+
+</h:body>
+
+</html>

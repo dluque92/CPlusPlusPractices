@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+
+	<h:head>
+		<style type="text/css">
+			@import url("../Academia3/css/style.css");
+		</style>
+		
+		
+	</h:head>
+	
+	<h:graphicImage  url="/img/besoftware.png"  style="display:block; text-align:center; margin-left: auto; margin-right: auto; " />
+
+	<h:form  style="margin: 50px; margin-left: auto; margin-right: auto; max-width: 380px;">
+	
+	    <p:panel id="panel" header="IDENTIFICACION DE USUARIO" style="margin-bottom:10px; text-align:center; ">
+	    
+	        <p:messages id="messages" />
+	        
+	        <h:panelGrid columns="2" cellpadding="5">
+	            <h:outputLabel for="name" value="Usuario" />
+	            <p:inputText id="name" required="true" value="#{usuariosBean.login.user}"/>
+	 
+	            <h:outputLabel for="pass" value="Contraseña"  />
+        		<p:password id="pass" value="#{usuariosBean.login.password}" label="Password" required="true" />
+	        </h:panelGrid>
+	        
+	    </p:panel>
+	 
+	    <p:commandButton value="Conectar" action="#{usuariosBean.login()}" style="width:188px;"  /> 
+	    <p:commandButton type="reset" value="Limpiar Datos" style="width:188px;" />
+	    
+	</h:form>
+
+</html>

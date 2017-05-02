@@ -1,0 +1,7 @@
+11:39:49 **** Incremental Build of configuration Debug for project Fibonacci ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Fibonacci.o" "..\\src\\Fibonacci.cpp" 
+g++ -o Fibonacci.exe "src\\Fibonacci.o" 
+
+11:39:49 Build Finished (took 454ms)
+

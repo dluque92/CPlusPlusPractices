@@ -1,0 +1,10 @@
+16:43:12 **** Rebuild of configuration Debug for project Relacion02Ejercicio05 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Relacion3Ejercicio5.o" "..\\src\\Relacion3Ejercicio5.cpp" 
+..\src\Relacion3Ejercicio5.cpp: In function `void descomposicionPrimos(int)':
+..\src\Relacion3Ejercicio5.cpp:36: warning: comparison between signed and unsigned integer expressions
+..\src\Relacion3Ejercicio5.cpp:40: warning: comparison between signed and unsigned integer expressions
+g++ -o Relacion02Ejercicio05.exe "src\\Relacion3Ejercicio5.o" 
+
+16:43:14 Build Finished (took 1s.422ms)
+

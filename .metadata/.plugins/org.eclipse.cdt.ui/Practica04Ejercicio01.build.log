@@ -1,0 +1,9 @@
+23:39:51 **** Rebuild of configuration Debug for project Practica04Ejercicio01 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Practica04Ejercicio01.o" "..\\src\\Practica04Ejercicio01.cpp" 
+..\src\Practica04Ejercicio01.cpp: In function `void PiramideDigitos(int)':
+..\src\Practica04Ejercicio01.cpp:21: warning: comparison between signed and unsigned integer expressions
+g++ -o Practica04Ejercicio01.exe "src\\Practica04Ejercicio01.o" 
+
+23:39:52 Build Finished (took 416ms)
+

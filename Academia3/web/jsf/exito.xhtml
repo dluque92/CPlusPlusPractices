@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<style type="text/css">
+		@import url("../css/style.css");
+	</style>
+</h:head>
+
+
+<h:body>
+	<h:form
+		style="margin: 100px; margin-left: auto; margin-right: auto; max-width: 400px;">
+		<p:panel id="panel" header="IDENTIFICACION DE USUARIO"
+			style="margin-bottom:10px;">
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputLabel for="user" value="Bienvenido " />
+				<h:outputText id="user" value="#{usuariosBean.login.user}" />
+				<h:outputLabel for="lastAccess" value="Ultimo acceso:  " />
+				<h:outputText id="lastAccess"
+					value="#{usuariosBean.login.lastAccess}" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+	
+	<div id="footer">
+    	<h4>Copyright © 2014 - Academia3</h4>
+    </div>
+
+</h:body>
+
+
+</html>

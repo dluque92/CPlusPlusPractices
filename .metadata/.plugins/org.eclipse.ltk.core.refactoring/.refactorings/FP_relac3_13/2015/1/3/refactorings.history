@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FP_relac3_13/src/FP_relac6_13.cpp&apos; to &apos;FP_relac3_13.cpp&apos;" description="Rename resource &apos;FP_relac6_13.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/FP_relac6_13.cpp" name="FP_relac3_13.cpp" stamp="1421488568492" updateReferences="true"/>
+</session>

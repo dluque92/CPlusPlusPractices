@@ -1,0 +1,74 @@
+<!-- Incluir cabecera en cada .xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:body>
+	<ui:include src="cabecera.xhtml"></ui:include>
+	<div class="cuerpo">
+		<ui:include src="menu.xhtml"></ui:include>
+		<div class="divespacio"></div>
+		<div class="contenido">
+#{AsignaturaBean.init()}
+			<h:form>
+				<p:panel id="panel" header="Editar Profesor" style="margin-bottom:10px;" styleClass="formCentradoEditAsig">
+					<p:messages id="msgs" />
+					<h:panelGrid columns="3"  styleClass="noBorders">
+						<p:outputLabel value="Nombre:" />
+						<p:inputText id="nombre" required="true" value="#{ProfesorBean.profesor.nombre}" label="Nombre">
+							<f:validateLength minimum="3" maximum="50" />
+	               			<p:ajax update="msgnombre"  event="keyup" />
+	               		</p:inputText>
+	               		<p:message for="nombre" id="msgnombre" display="icon" />
+	
+						<p:outputLabel value="Apellidos:" />
+						<p:inputText id="apellidos" required="true" value="#{ProfesorBean.profesor.apellidos}" label="Apellidos">
+							<f:validateLength minimum="3" maximum="50" />
+	               			<p:ajax update="msgapellidos"  event="keyup" />
+	               		</p:inputText>
+	               		<p:message for="apellidos" id="msgapellidos" display="icon" />
+	               		
+						<p:outputLabel value="Telefono:" />
+						<p:inputText id="telefono"  required="true" value="#{ProfesorBean.profesor.telefono}" label="Teléfono">
+							<f:validateLength minimum="9" maximum="9" />
+							<f:convertNumber integerOnly="true" type="number" />
+	               			<p:ajax update="msgtelefono"  event="keyup" />
+	               		</p:inputText>
+	               		<p:message for="telefono" id="msgtelefono" display="icon" />
+	
+						<p:outputLabel value="Email:" />
+						<p:inputText id="email" required="true" value="#{ProfesorBean.profesor.email}" label="Email">
+							<f:validateLength minimum="3" maximum="50" />
+							<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+	               			<p:ajax update="msgemail"  event="keyup" />
+	               		</p:inputText>
+	               		<p:message for="email" id="msgemail" display="icon" />
+						
+						<p:outputLabel value="Asignatura:" />
+						<p:selectOneRadio layout="pageDirection" required="true" value="#{ProfesorBean.idAsignaturaSelect}"  label="Asignatura">
+			            	<f:selectItems value="#{AsignaturaBean.listaAsignatura}" var="asig" itemLabel="#{asig.nombre}" itemValue="#{asig.idAsignatura}" />	
+			        	</p:selectOneRadio>
+						
+					</h:panelGrid>
+      			</p:panel>
+
+    				
+      				     
+        			<p:spacer height="30" />
+
+				 <p:commandButton update="panel" value="Editar" actionListener="#{ProfesorBean.EditarBD()}" />
+			</h:form>
+
+<!-- Incluir pie en cada .xhtml -->
+		</div>
+	</div>
+	<ui:include src="pie.xhtml"></ui:include>
+</h:body>
+</html>
+<!-- Incluir pie hasta aqui -->
